@@ -1,0 +1,57 @@
+<config>
+	<modules>
+		<Ambikuk_ShipPerProduct>
+			<version>1.0.3</version>
+		</Ambikuk_ShipPerProduct>
+	</modules>
+	
+	<global>
+		<helpers>
+			<ambikuk_shipperproduct>
+				<class>Ambikuk_ShipPerProduct_Helper</class>
+			</ambikuk_shipperproduct>
+        </helpers>
+		<models>
+			<ambikuk_shipperproduct>
+				<class>Ambikuk_ShipPerProduct_Model</class>
+			</ambikuk_shipperproduct>
+		</models>
+		<blocks>
+			<ambikuk_shipperproduct>
+				<class>Ambikuk_ShipPerProduct_Block</class>
+			</ambikuk_shipperproduct>
+			<checkout>
+				<rewrite>
+					<onepage_shipping_method_available>Ambikuk_ShipPerProduct_Block_Available</onepage_shipping_method_available>
+				</rewrite>
+			</checkout>
+		</blocks>
+	</global>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<ambikuk_shipperproduct>
+					<file>ambikuk_shipperproduct.xml</file>
+				</ambikuk_shipperproduct>
+			</updates>
+		</layout>
+	</frontend>
+	
+	<default>
+		<carriers>
+			<flatrate>
+				<infotext></infotext>
+			</flatrate>
+            <flatrate2>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>ambikuk_shipperproduct/carrier_flatrate2</model>
+                <name>Ship Per Product</name>
+                <price>5.00</price>
+                <title>Custom Rate</title>
+                <handling_type>F</handling_type>
+            </flatrate2>
+		</carriers>
+	</default>
+</config>
